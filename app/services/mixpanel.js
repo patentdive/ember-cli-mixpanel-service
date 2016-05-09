@@ -71,7 +71,7 @@ export default Ember.Service.extend({
     
   unregister: function(trait) {
         if (this.pageHasAnalytics()) {
-            window.mixpanel.unregister(traits);
+            window.mixpanel.unregister(trait);
         }
 
         if (this.logTrackingEnabled()) {

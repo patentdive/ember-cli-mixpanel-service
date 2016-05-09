@@ -68,6 +68,16 @@ export default Ember.Service.extend({
             this.logTracking('register user', traits, options);
         }
     },
+    
+  unregister: function(trait) {
+        if (this.pageHasAnalytics()) {
+            window.mixpanel.unregister(traits);
+        }
+
+        if (this.logTrackingEnabled()) {
+            this.logTracking('unregister user trait', trait);
+        }
+    },
 
     peopleSet: function(attributes) {
 
